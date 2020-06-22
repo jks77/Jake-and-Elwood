@@ -325,28 +325,35 @@ strong {
 .hero {
 	background-image: url('../img/hero-bg.jpg');
 	background-size: cover;
-	background-position: center 50%;
+	background-position: 60% 50%;
 	padding: 8em 0 4em;
 	color: #fff;
 }
 
 .hero > * {
 	grid-column: 2 / -2;
+	margin-right: 25%;
 }
 
 @media (min-width: 400px) {
 	.hero > * {
 		margin-right: 20%;
 	}
+
+	.hero {
+		background-position: 56% 50%;
+	}
 }
 
 @media (min-width: 600px) {
 	.hero {
 		padding: 10em 0 6em;
+		background-position: center 50%;
 	}
 
 	.hero > * {
 		grid-column: 2 / span 2;
+		margin-right: 10%;
 	}
 }
 
