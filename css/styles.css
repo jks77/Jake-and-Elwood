@@ -13,6 +13,21 @@ body {
 	font-size: 1rem;
 	color: #404040;
 	line-height: 1.6;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100vh;
+}
+
+header {
+	grid-row: 1;
+}
+
+main {
+	align-self: start;
+}
+
+.main-home {
+	grid-row: 1 / span 2;
 }
 
 img {
@@ -114,6 +129,7 @@ strong {
 	margin-top: .5em;
 	text-decoration: none;
 	transition: all .3s ease-in-out;
+	border: 1px solid transparent;
 }
 
 .btn-primary {
@@ -122,7 +138,8 @@ strong {
 	justify-self: start;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
 	border: 1px solid white;
 	background: black;
 	color: white;
@@ -206,6 +223,10 @@ strong {
 	color: #ffe600;
 }
 
+.active {
+	border-bottom: 1px solid #ffe600;
+}
+
 .close-nav {
 	border: 0;
 	background: 0;
@@ -261,7 +282,6 @@ strong {
 	background: #ebebeb;
 	padding: 4em 0;
 	text-align: center;
-
 	grid-template-areas: ". social ." ". main .";
 }
 
@@ -368,11 +388,17 @@ strong {
 
 .col {
 	grid-column: 2 / -2;
+	margin-bottom: 1.5em;
+}
+
+.col:last-child {
+	margin-bottom: 0;
 }
 
 @media (min-width: 600px) {
 	.col {
 		grid-column: span 1;
+		margin-bottom: 0;
 	}
 
 	.col:first-child {
@@ -433,10 +459,9 @@ textarea {
 }
 
 .btn-contact {
-	border: none;
-	font-size: 11px;
+	font-size: 14px;
 	font-weight: 900;
-	padding: 1em 3em;
+	padding: .75em 2.25em;
 	cursor: pointer;
 }
 
